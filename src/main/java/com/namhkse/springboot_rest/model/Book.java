@@ -3,22 +3,19 @@ package com.namhkse.springboot_rest.model;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.Column;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Entity
 @NoArgsConstructor
+@AllArgsConstructor
 public class Book {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String title;
-    private BigDecimal price;
+    private String author;
+    // private BigDecimal price;
+    @Column(name = "publish_date")
     private LocalDate publishDate;
 }
